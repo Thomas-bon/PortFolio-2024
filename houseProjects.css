@@ -350,4 +350,36 @@ body {
         bottom: 5%;
         background-repeat: no-repeat;
     }
+
+    #bookOpen {
+        width: 100vw;
+    }
+
+    #title {
+        font-family: pixel;
+        font-size: 1em;
+        text-align: center;
+        align-content: center;
+        margin-top: 5%;
+        height: 15%;
+        width: 100%;
+    }
+    
+    #video {
+        background-image: url(pictures/backgroundProjects.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        margin-top: 15%;
+    }
+    
+    #description {
+        height: 100%;
+        width: 100%;
+        font-family: pixel;
+        font-size: 90%;
+        text-align: center;
+        line-height: 13px;
+    }
 }

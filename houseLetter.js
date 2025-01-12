@@ -1,5 +1,12 @@
 const buttonLeave = document.getElementById('leave')
 const character = document.getElementById('character');
+const buttonCopyAdresse = document.getElementById('copyAdresse');
+const msgCopyAdresse = document.getElementById('msgCopyAdresse');
+const closeMenu = document.getElementById('closeMenu');
+const maintenacePage = document.getElementById('maintenace');
+const letterPage = document.getElementById('letterBack');
+const objet = document.getElementById('objet');
+const clipboardSuccess = document.getElementById('clipboardSuccess')
 
 let canPressE = false;
 let currentInteraction = null;
@@ -11,8 +18,8 @@ buttonLeave.addEventListener('click', function () {
 })
 
 document.addEventListener('keyup', (e) => {
-    if (e.key === "Escape"){
-    window.location.href = "homePage.html" 
+    if (e.key === "Escape") {
+        window.location.href = "homePage.html"
 
     }
 })
@@ -24,7 +31,10 @@ document.addEventListener('keydown', (e) => {
 
         switch (currentInteraction) {
             case "object":
-                window.location.href = "homePage.html";
+                maintenacePage.style.display = 'flex';
+                letterPage.style.display = 'flex';
+                closeMenu.style.display = 'block'
+
                 break;
             default:
                 console.log("Interaction inconnue");
@@ -34,6 +44,72 @@ document.addEventListener('keydown', (e) => {
 
     }
 });
+
+function letterInteraction() {
+
+
+    objet.addEventListener('click', function () {
+        maintenacePage.style.display = 'flex';
+        letterPage.style.display = 'flex';
+        closeMenu.style.display = 'block'
+    })
+
+    buttonCopyAdresse.addEventListener('mousedown', function () {
+        buttonCopyAdresse.style.backgroundImage = 'url(pictures/props/buttonBrownPressed.png)';
+        msgCopyAdresse.style.marginTop = '20px'
+
+        navigator.clipboard.writeText("pro.bonanseathomas@gmail.com").then(
+            function () {
+                clipboardSuccess.style.display = 'flex'
+
+                setTimeout(function () {
+                    clipboardSuccess.style.animation = "disappear 0.6s ease-in-out"
+
+                }, 1050)
+
+                setTimeout(function () {
+                    clipboardSuccess.style.display = 'none'
+                    clipboardSuccess.style.animation = "pop-up 0.6s ease-in-out"
+
+                    
+                    closeMenu.style.display = 'block'
+
+                }, 1600)
+            },
+            function () {
+                /* échec de l’écriture dans le presse-papiers */
+            },
+        );
+    });
+
+    buttonCopyAdresse.addEventListener('mouseup', function () {
+        buttonCopyAdresse.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
+        msgCopyAdresse.style.marginTop = '10px';
+
+        if (window.innerWidth <= 768) { 
+            closeMenu.style.display = 'none'; 
+        } else {
+            closeMenu.style.display = 'block'; 
+        }
+    });
+
+    buttonCopyAdresse.addEventListener('mouseleave', function () {
+        buttonCopyAdresse.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
+        msgCopyAdresse.style.marginTop = '10px'
+    });
+
+    closeMenu.addEventListener('click', function () {
+        maintenacePage.style.display = 'none';
+        letterPage.style.display = 'none';
+        closeMenu.style.display = 'none'
+    })
+
+
+}
+
+letterInteraction();
+
+
 
 // MOUVEMENTS PERSONNAGE + COLLISIONS
 

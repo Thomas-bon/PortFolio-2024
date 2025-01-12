@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
+@font-face {
+    font-family: "pixel";
+    src: url(Typographie/PixelOperator-Bold.ttf);
+}
 
 * {
     margin: 0;
@@ -41,7 +43,7 @@ body {
     width: 70px;
     /* background-color: rgb(255, 0, 217); */
     position: absolute;
-    z-index: 300;
+    z-index: 11;
     bottom: 160px;
     left: 477px;
 
@@ -79,7 +81,7 @@ body {
 
     /* background-color: black; */
     position: absolute;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
     z-index: 3;
 }
 
@@ -127,6 +129,143 @@ body {
     animation: scaling 0.8s ease-in-out infinite;
 }
 
+/* ---------------------------------------------------  PAGE FORMULAIRE LETTRE  ---------------------------------------------------*/
+
+#letterBack {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 12;
+    overflow-y: hidden;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+#letterForm {
+    position: relative;
+    height: 100%;
+    width: 37%;
+    background-image: url(pictures/props/paperForm.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* ---------------------------------------------------  PAGE MAINTENANCE  ---------------------------------------------------*/
+
+#maintenace {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 13;
+    overflow-y: hidden;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    /* backdrop-filter: blur(5px); */
+}
+
+#pngMaintenance {
+    /* position: absolute; */
+    height: 800px;
+    width: 500px;
+    background-image: url(pictures/Character/pngLetter.png);
+    background-size: cover;
+
+}
+
+#msgPng {
+    /* position: absolute; */
+    right: 20%;
+    height: 80%;
+    width: 40%;
+    background-image: url(pictures/props/bubble.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#msg {
+    height: 30%;
+    width: 50%;
+    font-family: pixel;
+    font-size: 2vw;
+    text-align: center;
+}
+
+#copyAdresse {
+    cursor: pointer;
+    height: 20%;
+    width: 50%;
+    background-image: url(pictures/props/buttonBrown.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+}
+
+#msgCopyAdresse {
+    /* position: absolute; */
+    font-family: pixel;
+    font-size: 2.2vw;
+    text-align: center;
+    margin-top: 3%;
+    height: 40%;
+    width: 80%;
+}
+
+#closeMenu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 22%;
+    background-image: url(pictures/props/closeBookOpen.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12%;
+    height: 12%;
+    transition: 0.2s ease-in-out;
+    z-index: 12;
+}
+
+#closeMenu:hover {
+    transform: scale(1.2);
+}
+
+#clipboardSuccess{
+    position: absolute;
+    margin-top: 2%;
+    border: black 10px solid;
+    height: 180px;
+    width: 400px;
+    background-color: #EEA160;
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: pop-up 0.6s ease-in-out;
+}
+
+#msgSuccess {
+    text-align: center;
+    height: 80%;
+    width: 80%;
+    font-family: pixel;
+    font-size: 2vw;
+    z-index: 20;
+}
+
 /* ---------------------------------------------------  ANIMATION ---------------------------------------------------*/
 
 @keyframes scaling {
@@ -145,6 +284,36 @@ body {
     }
 }
 
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+
+    }
+
+    100% {
+        opacity: 0;
+
+    }
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(-100%); /* L'élément commence hors de la vue, en haut */
+        opacity: 0; /* L'élément est invisible */
+    }
+    50% {
+        transform: translateY(20px); /* Effet de rebond vers le bas */
+        opacity: 1; /* L'élément devient visible */
+    }
+    100% {
+        transform: translateY(0); /* L'élément atteint sa position finale */
+    }
+}
+
 
 /* ---------------------------------------------------  MEDIA QUERY  ---------------------------------------------------*/
 
@@ -160,7 +329,7 @@ body {
 
     #room {
         height: 60%;
-        width: 100%; 
+        width: 100%;
         background-size: contain;
     }
 
@@ -170,7 +339,7 @@ body {
 
     #table {
         height: 15%;
-        width: 30%; 
+        width: 30%;
         bottom: 25%;
         left: 10%;
         background-size: contain;
@@ -185,7 +354,103 @@ body {
     }
 
     .obstacleDeFouOMG {
-        width: 80%; 
-        height: auto; 
+        width: 80%;
+        height: auto;
+    }
+
+    #letterBack {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: 12;
+        overflow-y: hidden;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #letterForm {
+        position: relative;
+        height: 100vh;
+        width: 120%;
+        background-image: url(pictures/props/paperForm.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #closeMenu {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 3%;
+        left: 2%;
+        background-image: url(pictures/props/closeBookOpen.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 90px;
+        height: 90px;
+        transition: 0.2s ease-in-out;
+        z-index: 20;
+    }
+
+    #msgPng {
+        /* position: absolute; */
+        right: 20%;
+        height: 100%;
+        width: 100%;
+        background-image: url(pictures/props/bubble.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        z-index: 14;
+    }
+
+    #msg {
+        height: 35%;
+        width: 90%;
+        font-family: pixel;
+        font-size: 10vw;
+        text-align: center;
+    }
+
+    #msgCopyAdresse {
+        /* position: absolute; */
+        font-family: pixel;
+        font-size: 6vw;
+        text-align: center;
+        margin-top: 7%;
+        height: 30%;
+        width: 80%;
+    }
+
+    #copyAdresse {
+        cursor: pointer;
+        height: 15%;
+        width: 60%;
+        background-image: url(pictures/props/buttonBrown.png);
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    
+        display: flex;
+        justify-content: center;
+    }
+
+    #msgSuccess {
+        position: absolute;
+        text-align: center;
+        height: 80%;
+        width: 80%;
+        font-family: pixel;
+        font-size: 8vw;
+        z-index: 200;
     }
 }
