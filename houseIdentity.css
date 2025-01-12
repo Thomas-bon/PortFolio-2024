@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: black;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+#room {
+    height: 90%;
+    width: 51%;
+    background-image: url('pictures/backgroundIdentity.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#character {
+    height: 120px;
+    width: 70px;
+    /* background-color: rgb(255, 0, 217); */
+    position: absolute;
+    z-index: 300;
+    bottom: 115px;
+    left: 290px;
+
+}
+
+#eInteract {
+    position: absolute;
+    top: -60px;
+    /* left: -40; */
+    height: 80px;
+    width: 100%;
+    display: none;
+    background-image: url(pictures/Keys/e.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    z-index: 400;
+}
+
+#characterPicture {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 122px;
+    width: 100%;
+    background-image: url(pictures/Character/idleBack.png);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, opacity 0.7s ease;
+
+}
+
+.obstacleDeFouOMG {
+
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+
+
+#leave {
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 9%;
+    font-family: 'Silkscreen', cursive;
+    font-size: 45px;
+    height: 100px;
+    width: 300px;
+}
+
+/* ---------------------------------------------------  ANIMATION ---------------------------------------------------*/
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.2);
+
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+/* ---------------------------------------------------  LES PROPS  ---------------------------------------------------*/
+
+
+#stairs {
+    /* background-color: black; */
+
+    right: 0;
+    height: 35%;
+    width: 24%;
+}
+
+#table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 14%;
+    width: 18%;
+    background-image: url(pictures/props/tableIdentity.png);
+    background-size: contain;
+    bottom: 40%;
+    left: 20%;
+}
+
+#paper {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    rotate: 20deg;
+
+    height: 70%;
+    width: 40%;
+    background-image: url(pictures/props/paper.png);
+    background-position: center;
+    animation: shake 1s ease-in-out infinite;
+}
+
+#tv {
+    cursor: pointer;
+    height: 100px;
+    width: 65px;
+    background-image: url(pictures/props/tvIdentity.png);
+    top: 30%;
+    right: 20%;
+    animation: scaling 1s ease-in-out infinite;
+
+}
+
+/* --------------------------------------------------- SOCIAL NETWORKS ---------------------------------------------------*/
+
+#socialNetwork {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EEA160;
+    border: 15px solid #5E3643;
+    align-items: center;
+    position: absolute;
+    height: 90%;
+    width: 15%;
+    right: 5%;
+    gap: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#pseudo {
+    text-align: center;
+    font-family: 'Silkscreen';
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#logo {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#instagram {
+    height: 33%;
+    width: 85%;
+
+}
+
+#instagram #logo {
+    height: 75%;
+    width: 100%;
+    background-image: url(pictures/logos/instagram.png);
+}
+
+#instagram #pseudo {
+    height: 25%;
+    width: 100%;
+}
+
+
+/* #github {
+    height: 33%;
+    width: 85%;
+}
+
+#github #logo {
+    height: 75%;
+    width: 100%;
+    background-image: url(https://i.pinimg.com/736x/4d/40/97/4d4097f3c479b8da74d988c322c797fa.jpg);
+
+}
+
+#github #pseudo {
+    height: 25%;
+    width: 100%;
+} */
+
+#linkedin {
+    height: 33%;
+    width: 85%;
+
+}
+
+#linkedin #logo {
+    height: 75%;
+    width: 100%;
+    background-image: url(pictures/logos/linkedin.webp);
+
+}
+
+#linkedin #pseudo {
+    height: 25%;
+    width: 100%;
+}
+
+/* ---------------------------------------------------  MEDIA QUERY POUR TÉLÉPHONE ---------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+
+    /* Redimensionne le fond de la page */
+    #background {
+        height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #room {
+        height: 45%;
+        width: 100%;
+        background-size: contain;
+    }
+
+    #character {
+        display: none;
+    }
+
+
+
+    #leave {
+        font-size: 40px;
+        height: 80px;
+        width: 250px;
+        top: 10%;
+        left: 20%;
+    }
+
+    #stairs {
+        display: none;
+    }
+
+    #table {
+        height: 15%;
+        width: 22%;
+        bottom: 40%;
+        left: 20%;
+        background-size: contain;
+    }
+
+    #tv {
+        height: 19%;
+        width: 12%;
+        top: 25%;
+        right: 17%;
+        background-size: contain;
+    }
+
+    #paper {
+        top: 5px;
+        height: 90%;
+        width: 50%;
+        background-image: url(pictures/props/paper.png);
+        background-size: contain;
+        animation: shake 1s ease-in-out infinite;
+    }
+
+    .obstacleDeFouOMG {
+        width: 80%;
+        height: auto;
+    }
+
+    #socialNetwork {
+        flex-direction: row;
+        position: absolute;
+        height: 20%;
+        width: 90%;
+        bottom: 1%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    #pseudo {
+        text-align: center;
+        font-family: 'Silkscreen';
+        font-size: 12px;
+        text-align: center;
+    }
+
+    #instagram {
+        height: 85%;
+        width: 33%;
+    }
+
+    #instagram #logo {
+        height: 85%;
+        width: 100%;
+    }
+
+    #instagram #pseudo {
+        height: 25%;
+        width: 100%;
+    }
+
+
+    /* #github {
+        height: 85%;
+        width: 33%;
+    } */
+
+    /* #github #logo {
+        height: 85%;
+        width: 100%;
+    }
+
+    #github #pseudo {
+        height: 25%;
+        width: 100%;
+    } */
+
+    #linkedin {
+        height: 85%;
+        width: 33%;
+
+    }
+
+    #linkedin #logo {
+        height: 85%;
+        width: 100%;
+    }
+
+    #linkedin #pseudo {
+        height: 25%;
+        width: 100%;
+    }
+}

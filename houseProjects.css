@@ -1,0 +1,353 @@
+@font-face {
+    font-family: "pixel";
+    src: url(Typographie/PixelOperator-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: black;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+#room {
+    height: 90%;
+    width: 50%;
+    background-image: url('pictures/backgroundProjects.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+#character {
+    height: 120px;
+    width: 70px;
+    /* background-color: rgb(255, 0, 217); */
+    position: absolute;
+    z-index: 300;
+    bottom: 110px;
+    right: 210px;
+
+}
+
+#eInteract {
+    position: absolute;
+    top: -60px;
+    /* left: -40; */
+    height: 80px;
+    width: 100%;
+    display: none;
+    background-image: url(pictures/Keys/e.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    z-index: 400;
+}
+
+#characterPicture {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 122px;
+    width: 100%;
+    background-image: url(pictures/Character/idleBack.png);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, opacity 0.7s ease;
+
+}
+
+.obstacleDeFouOMG {
+
+    /* background-color: black; */
+    position: absolute;
+    z-index: 3;
+}
+
+#leave {
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-family: 'Silkscreen', cursive;
+    font-size: 45px;
+    height: 100px;
+    width: 300px;
+    z-index: 200;
+
+}
+
+/* ---------------------------------------------------  LES MAISONS  ---------------------------------------------------*/
+
+#stairs {
+    /* background-color: black; */
+
+    height: 30%;
+    width: 23%;
+}
+
+#tables {
+    position: absolute;
+
+    /* background-color: black; */
+    height: 43%;
+    width: 49%;
+    bottom: 27%;
+    left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    row-gap: 35px;
+}
+
+#tableAndChair {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 36%;
+    width: 15%;
+    background-image: url(pictures/props/chairTableProjects.png);
+    background-size: contain;
+
+}
+
+.book {
+    cursor: pointer;
+    position: absolute;
+    /* background-color: black; */
+    background-image: url(pictures/props/book.png);
+    background-position: center 65%;
+    width: 100px;
+    height: 160px;
+    bottom: 10%;
+    animation: zoom 1.5s ease-in-out infinite;
+    background-repeat: no-repeat;
+}
+
+/* ---------------------------------------------------  ANIMATIONS ---------------------------------------------------*/
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* --------------------------------------------------- BOOKOPEN DETAILS PROJECTS ---------------------------------------------------*/
+
+#bookOMG {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#bookOpen {
+    display: none;
+    z-index: 500;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 80vw;
+    background-image: url(pictures/props/bookOpen.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#rightPage {
+    position: absolute;
+    right: 11.5%;
+    top: 12.7%;
+    height: 56%;
+    width: 28%;
+    z-index: 9;
+}
+
+#leftPage {
+    position: absolute;
+    left: 11.5%;
+    top: 12.7%;
+    height: 56%;
+    width: 28%;
+    z-index: 9;
+}
+
+#title {
+    font-family: pixel;
+    font-size: 4em;
+    text-align: center;
+    align-content: center;
+    margin-top: 5%;
+    height: 15%;
+    width: 100%;
+}
+
+#video {
+    background-image: url(pictures/backgroundProjects.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin-top: 15%;
+}
+
+#description {
+    height: 100%;
+    width: 100%;
+    font-family: pixel;
+    font-size: 180%;
+    text-align: center;
+    line-height: 80px;
+}
+
+#closeMenu {
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-image: url(pictures/props/closeBookOpen.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12%;
+    height: 12%;
+    transition: 0.2s ease-in-out;
+}
+
+#closeMenu:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+/* ---------------------------------------------------  MEDIA QUERY POUR TÉLÉPHONE ---------------------------------------------------*/
+
+@media screen and (min-width: 1400px) {
+ 
+    /* #bookOMG{
+        display: none;
+    } */
+    #room {
+        height: 90%;
+        width: 55%;
+    }
+
+    #leave {
+        font-size: 40px;
+        height: 80px;
+        width: 250px;
+        top: 10%;
+        left: 3%;
+        z-index: 200;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #background {
+        height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #room {
+        height: 500px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    #character {
+        display: none;
+    }
+
+    #enterRoom {
+        height: 8.3%;
+        width: 100%;
+        background-size: contain;
+        z-index: 2;
+    }
+
+    #leave {
+        font-size: 40px;
+        height: 80px;
+        width: 250px;
+        top: 10%;
+        left: 20%;
+        z-index: 200;
+    }
+
+    #stairs {
+        display: none;
+    }
+
+    #tables {
+        position: absolute;
+
+        height: 30%;
+        width: 65%;
+        bottom: 30%;
+        left: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15%;
+        /* row-gap: 35px; */
+    }
+
+    #tableAndChair {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        background-repeat: no-repeat;
+        height: 46%;
+        width: 15%;
+        background-image: url(pictures/props/chairTableProjects.png);
+        background-size: contain;
+    }
+
+    .book {
+        position: absolute;
+        /* background-color: black; */
+        background-image: url(pictures/props/book.png);
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        bottom: 5%;
+        background-repeat: no-repeat;
+    }
+}

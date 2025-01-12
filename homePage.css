@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "pixel";
+    src: url(Typographie/PixelOperator-Bold.ttf);
+}
+
+#background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('pictures/BackgroundHomePagee.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+
+#character {
+    height: 150px;
+    width: 80px;
+    position: absolute;
+    z-index: 300;
+    bottom: 100px;
+    left: 880px;
+
+}
+
+#eInteract {
+    position: absolute;
+    top: -60px;
+    /* left: -40; */
+    height: 80px;
+    width: 100%;
+    display: none;
+    background-image: url(pictures/Keys/e.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    z-index: 400;
+}
+
+#characterPicture {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 122px;
+    width: 100%;
+    background-image: url(pictures/Character/idleBack.png);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, opacity 0.7s ease;
+
+}
+
+
+
+.obstacleDeFouOMG {
+
+    /* background-color: black; */
+    position: absolute;
+    z-index: 3;
+}
+
+
+/* ---------------------------------------------------  LES MAISONS  ---------------------------------------------------*/
+
+#houseProjects {
+    cursor: pointer;
+    width: 430px;
+    height: 400px;
+    top: 100px;
+    right: 80px;
+    background-image: url('pictures/houseProjects.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+}
+
+#houseIdentity {
+    cursor: pointer;
+    width: 390px;
+    height: 390px;
+    top: 0px;
+    left: 750px;
+    background-image: url('pictures/houseIdentity.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+}
+
+#houseLetter {
+    cursor: pointer;
+    width: 390px;
+    height: 450px;
+    bottom: 200px;
+    left: 100px;
+    background-image: url('pictures/houseLetter.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+}
+
+.sign {
+    position: absolute;
+    background-image: url(pictures/signHome.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 25%;
+    width: 120%;
+    height: 30%;
+    animation: zoom 2.5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "pixel";
+    font-size: 60px;
+}
+
+#houseLetter .sign {
+    height: 25%;
+
+}
+
+
+/* ---------------------------------------------------  LES PROPS  ---------------------------------------------------*/
+
+
+#camp {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    /* background-color: black; */
+    height: 25%;
+    width: 30%;
+}
+
+#tents {
+    position: absolute;
+    background-image: url(pictures/props/camp.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+#bigThree {
+    position: absolute;
+    top: -120px;
+    left: 40px;
+    height: 240px;
+    width: 200px;
+    background-image: url(pictures/props/Tree.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#lightStick {
+    background-image: url(pictures/props/light.png);
+    height: 140px;
+    width: 60px;
+    right: 38%;
+    bottom: 20%;
+    z-index: 20;
+}
+
+#sighHouseLeft {
+    background-image: url(pictures/props/signLeft.png);
+    height: 100px;
+    width: 45px;
+    left: 38%;
+    bottom: 35%;
+    z-index: 20;
+}
+
+#sighHouseRight {
+    background-image: url(pictures/props/signRight.png);
+    height: 100px;
+    width: 65px;
+    right: 34%;
+    top: 30%;
+}
+
+#bigBush {
+    background-image: url(pictures/props/bush2.png);
+    height: 85px;
+    width: 150px;
+    left: 30%;
+    bottom: 6%;
+}
+
+#bush {
+    background-image: url(pictures/props/bush1.png);
+    height: 85px;
+    width: 95px;
+    left: 33%;
+    bottom: 45%;
+}
+
+#rock {
+    background-image: url(pictures/props/rock.png);
+    height: 85px;
+    width: 120px;
+    right: 28%;
+    bottom: 10%;
+}
+
+#barrel {
+    background-image: url(pictures/props/barrel.png);
+    height: 65px;
+    width: 62px;
+    right: 33%;
+    bottom: 30%;
+    z-index: 3;
+}
+
+.props {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+
+/* ---------------------------------------------------  LES TOUCHES  ---------------------------------------------------*/
+
+
+#keys {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    /* background-color: black; */
+    height: 210px;
+    width: 350px;
+    bottom: 30px;
+    right: 90px;
+    gap: 0px;
+    z-index: 400;
+}
+
+#keyZ {
+    background-image: url(pictures/Keys/z.png);
+    background-position: center top;
+    height: 50%;
+    background-repeat: no-repeat;
+
+}
+
+#keyQ {
+    background-image: url(pictures/Keys/q.png);
+}
+
+#keyS {
+    background-image: url(pictures/Keys/s.png);
+}
+
+#keyD {
+    background-image: url(pictures/Keys/d.png);
+}
+
+
+#keysQSD {
+    display: flex;
+    height: 50%;
+
+}
+
+.key {
+    background-position: center top;
+
+    height: 100%;
+    width: 33%;
+    background-repeat: no-repeat;
+}
+
+/* ---------------------------------------------------  ANIMATIONS ---------------------------------------------------*/
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0) rotate(2deg) scale(1.02);
+    }
+
+    25% {
+        transform: translateX(-5px) rotate(-2deg) scale(1.05);
+    }
+
+    50% {
+        transform: translateX(5px) rotate(2deg) scale(1.05);
+    }
+
+    75% {
+        transform: translateX(-5px) rotate(-2deg) scale(1.05);
+    }
+
+    100% {
+        transform: translateX(0) rotate(2deg) scale(1.02);
+    }
+}
+
+
+
+
+/* ---------------------------------------------------  MEDIA QUERY  ---------------------------------------------------*/
+
+
+@media screen and (max-width: 768px) {
+    #background {
+        height: 100vh;
+        background-image: url('pictures/BackgroundHomePageeTel.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    #character {
+        display: none;
+    }
+
+    #houseProjects {
+        position: absolute;
+        width: 55%;
+        height: 30%;
+        top: 35%;
+        left: 25%;
+
+    }
+
+    #houseIdentity {
+        position: absolute;
+        top: 40px;
+        left: 25%;
+        width: 55%;
+        height: 30%;
+
+    }
+
+    #houseLetter {
+        position: absolute;
+        bottom: 5%;
+        left: 25%;
+        width: 55%;
+        height: 30%;
+
+        background-position: center;
+        gap: 0;
+    }
+
+    #camp {
+        display: none;
+    }
+
+
+    #keysQSD,
+    #keyZ,
+    #keys {
+        display: none;
+    }
+
+    #tents,
+    #bigThree,
+    #lightStick,
+    #sighHouseLeft,
+    #sighHouseRight,
+    #bigBush,
+    #bush,
+    #rock,
+    #barrel {
+        width: 80%;
+        height: auto;
+    }
+
+    .sign {
+
+        margin-top: 25%;
+        width: 120%;
+        height: 7vh;
+        animation: zoom 2.5s ease-in-out infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "pixel";
+        font-size: 50px;
+    }
+
+    #houseLetter .sign {
+        margin-top: 40%;
+
+        height: 7vh;
+
+    }
+}

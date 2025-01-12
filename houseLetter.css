@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: black;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+#room {
+    height: 100%;
+    width: 51%;
+    background-image: url('pictures/backgroundLetter.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+#character {
+    height: 120px;
+    width: 70px;
+    /* background-color: rgb(255, 0, 217); */
+    position: absolute;
+    z-index: 300;
+    bottom: 160px;
+    left: 477px;
+
+}
+
+#eInteract {
+    position: absolute;
+    top: -60px;
+    /* left: -40; */
+    height: 80px;
+    width: 100%;
+    display: none;
+    background-image: url(pictures/Keys/e.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    z-index: 400;
+}
+
+#characterPicture {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 122px;
+    width: 100%;
+    background-image: url(pictures/Character/idleBack.png);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, opacity 0.7s ease;
+
+}
+
+.obstacleDeFouOMG {
+
+    /* background-color: black; */
+    position: absolute;
+    background-repeat: no-repeat;   
+    z-index: 3;
+}
+
+#leave {
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-family: 'Silkscreen', cursive;
+    font-size: 45px;
+    height: 100px;
+    width: 300px;
+}
+
+/* ---------------------------------------------------  LES PROPS  ---------------------------------------------------*/
+
+
+#stairs {
+    /* background-color: black; */
+
+    height: 33%;
+    width: 23%;
+}
+
+#table {
+    background-image: url(pictures/props/tableLetter.png);
+
+    height: 140px;
+    width: 265px;
+    bottom: 20%;
+    left: 10%;
+}
+
+#objet {
+    cursor: pointer;
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    background-image: url(pictures/props/letter.png);
+    background-size: cover;
+    bottom: 53%;
+    right: 44%;
+    animation: scaling 0.8s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------  ANIMATION ---------------------------------------------------*/
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+
+/* ---------------------------------------------------  MEDIA QUERY  ---------------------------------------------------*/
+
+
+@media screen and (max-width: 768px) {
+
+    #background {
+        height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #room {
+        height: 60%;
+        width: 100%; 
+        background-size: contain;
+    }
+
+    #character {
+        display: none;
+    }
+
+    #table {
+        height: 15%;
+        width: 30%; 
+        bottom: 25%;
+        left: 10%;
+        background-size: contain;
+    }
+
+    #leave {
+        font-size: 40px;
+        height: 80px;
+        width: 250px;
+        top: 10%;
+        left: 20%;
+    }
+
+    .obstacleDeFouOMG {
+        width: 80%; 
+        height: auto; 
+    }
+}
