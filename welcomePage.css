@@ -4,11 +4,20 @@
 }
 
 @font-face {
-    font-family: pixelBase;
+    font-family: pixel;
     src: url(Typographie/PixelOperator-Bold.ttf);
 }
 
+#background {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(pictures/BackgroundHomePageeTel.png);
+}
 
+
+/* ---------------------------------------------------  TITRE ---------------------------------------------------*/
 
 
 #title {
@@ -18,8 +27,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 8%;
-    font-family: pixelBase;
+    margin-top: 4%;
+    font-family: pixel;
     gap: 1;
     font-size: 70px;
     -webkit-text-stroke: 16px rgb(0, 0, 0);
@@ -45,18 +54,21 @@
 
 }
 
+/* ---------------------------------------------------  BOUTTON PLAY ---------------------------------------------------*/
+
 
 #playButton {
     display: flex;
     justify-content: center;
     margin-top: 10%;
-    font-family: pixelBase;
+    font-family: pixel;
     font-size: 60px;
     margin-right: 60px;
     color: #CD953E;
     -webkit-text-stroke: 8px rgb(0, 0, 0);
     paint-order: stroke fill;
     gap: 15px;
+    animation: twinkle 1s ease-in-out infinite;
 }
 
 #selected {
@@ -74,43 +86,134 @@
     cursor: pointer;
 }
 
-
-#character {
-    bottom: 10%;
-    height: 300px;
-    width: 18%;
-    position: absolute;
-    margin-left: 5%;
-}
-
-.hero {
-    height: 40%;
-    background-color: blue;
-}
-
-.commentCharacter {
-    background-color: black;
-    height: 60%;
-}
-
-
-
 a {
-    color: inherit  ;
+    color: inherit;
     text-decoration: none;
 }
 
 
+/* ---------------------------------------------------  ANIMATIONS ---------------------------------------------------*/
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ---------------------------------------------------  PNG ---------------------------------------------------*/
+
+#pngSpeak {
+    height: 300px;
+    width: 250px;
+    background-image: url(pictures/Character/pngSpirit.gif);
+    background-size: cover;
+
+    position: absolute;
+    bottom: 0;
+}
+
+#bubbleMsg {
+    position: absolute;
+    background-image: url(pictures/props/bubbleWelcome.png);
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+    width: 200px;
+    top: -80%;
+    right: -55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#comment {
+    margin-top: 20%;
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    font-family: pixel;
+    font-size: 20px;
+}
 
 
+/* ---------------------------------------------------  MEDIA QUERY POUR TÉLÉPHONE ---------------------------------------------------*/
 
 
+@media screen and (max-width: 440px) {
 
 
-
-
-@media screen and (max-width: 430px) {
     #title {
-        font-size: 15px;
+        text-align: center;
+        flex-direction: column;
+        /* height: 100vw; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 33%;
+        font-family: pixel;
+        gap: 20px;
+        font-size: 25px;
+        -webkit-text-stroke: 8px rgb(0, 0, 0);
+        /* paint-order: stroke fill; */
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.72);
+
+
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .name {
+        color: #7DCB1C;
+    }
+
+    .job {
+        color: rgba(196, 128, 63, 1);
+
+    }
+
+
+    #playButton {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 30%;
+        font-family: pixel;
+        font-size: 32px;
+        width: 100%;
+        color: #CD953E;
+        -webkit-text-stroke: 8px rgb(0, 0, 0);
+        paint-order: stroke fill;
+        gap: 15px;
+    }
+
+    #selected {
+        transition: background-image 0.7s ease, width 0.7s ease;
+        background-image: url(pictures/TriangleSelector.svg);
+        background-size: contain;
+        width: 30px;
+    }
+
+
+    #pngSpeak {
+        height: 200px;
+        width: 200px;
+        background-image: url(pictures/Character/pngSpirit.gif);
+        background-size: cover;
+
+        position: absolute;
+        bottom: 0;
     }
 }
