@@ -131,13 +131,13 @@ body {
 
 #pngLetter {
     position: absolute;
-    top: 27%;
-    right: 20%;
+    top: 28%;
+    right: 41%;
 
     background-image: url(pictures/Character/pngLetter.png);
     background-size: cover;
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
 }
 
 /* ---------------------------------------------------  PAGE FORMULAIRE LETTRE  ---------------------------------------------------*/
@@ -463,5 +463,16 @@ body {
         font-family: pixel;
         font-size: 8vw;
         z-index: 200;
+    }
+
+    #pngLetter {
+        position: absolute;
+        top: 27%;
+        right: 20%;
+    
+        background-image: url(pictures/Character/pngLetter.png);
+        background-size: cover;
+        height: 90px;
+        width: 90px;
     }
 }
