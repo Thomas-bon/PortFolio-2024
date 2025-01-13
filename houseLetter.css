@@ -436,10 +436,11 @@ body {
     }
 
     #msg {
+        margin-top: 10%;
         height: 35%;
         width: 90%;
         font-family: pixel;
-        font-size: 5vw;
+        font-size: 6vw;
         text-align: center;
     }
 
