@@ -420,8 +420,14 @@ body {
         height: 100%;
         width: 100%;
         font-family: pixel;
-        font-size: 90%;
+        font-size: 80%;
         text-align: center;
         line-height: 13px;
+    }
+}
+
+@media screen and (max-width : 360px) {
+    #description {
+        font-size: 55%;
     }
 }
