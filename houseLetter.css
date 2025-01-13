@@ -432,13 +432,13 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 30px;
         z-index: 14;
     }
 
     #msg {
-        margin-top: 20%;
-        height: 35%;
+        margin-top: 8%;
+        height: 20%;
         width: 90%;
         font-family: pixel;
         font-size: 6vw;
