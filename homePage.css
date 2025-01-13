@@ -121,8 +121,8 @@
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 25%;
-    width: 120%;
-    height: 30%;
+    width: 140%;
+    height: 50%;
     animation: zoom 2.5s ease-in-out infinite;
     display: flex;
     justify-content: center;
