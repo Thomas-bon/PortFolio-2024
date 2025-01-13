@@ -232,7 +232,7 @@ body {
     font-family: pixel;
     font-size: 180%;
     text-align: center;
-    line-height: 80px;
+    line-height: 60px;
 }
 
 #closeMenu {
@@ -258,10 +258,8 @@ body {
 /* ---------------------------------------------------  MEDIA QUERY POUR TÉLÉPHONE ---------------------------------------------------*/
 
 @media screen and (min-width: 1400px) {
- 
-    /* #bookOMG{
-        display: none;
-    } */
+
+
     #room {
         height: 90%;
         width: 55%;
@@ -364,7 +362,7 @@ body {
         height: 15%;
         width: 100%;
     }
-    
+
     #video {
         background-image: url(pictures/backgroundProjects.png);
         background-repeat: no-repeat;
@@ -373,7 +371,7 @@ body {
         width: 100%;
         margin-top: 15%;
     }
-    
+
     #description {
         height: 100%;
         width: 100%;
