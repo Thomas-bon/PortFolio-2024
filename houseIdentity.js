@@ -13,12 +13,12 @@ let socialWindowIsOpen = false;
 
 // BOUTON RETOUR A LA PAGE HOME
 
-buttonLeave.addEventListener('click', function() {
-    window.location.href = "homePage.html" 
+buttonLeave.addEventListener('click', function () {
+    window.location.href = "homePage.html"
 })
 document.addEventListener('keyup', (e) => {
-    if (e.key === "Escape"){
-    window.location.href = "homePage.html" 
+    if (e.key === "Escape") {
+        window.location.href = "homePage.html"
 
     }
 })
@@ -31,17 +31,17 @@ function openPdf() {
 };
 
 
-tv.addEventListener('click', function() {
-    if(!socialWindowIsOpen){
+tv.addEventListener('click', function () {
+    if (!socialWindowIsOpen) {
         socialNetworkWindow.style.display = "flex";
         socialWindowIsOpen = true;
-    }else{
+    } else {
         socialNetworkWindow.style.display = "none";
         socialWindowIsOpen = false;
     }
 })
 
-paper.addEventListener('click', function() {
+paper.addEventListener('click', function () {
     openPdf();
 })
 
@@ -54,14 +54,17 @@ document.addEventListener('keydown', (e) => {
                 break;
             case "tv":
 
-                if(!socialWindowIsOpen){
+                if (!socialWindowIsOpen) {
                     socialNetworkWindow.style.display = "flex";
                     socialWindowIsOpen = true;
-                }else{
+                } else {
                     socialNetworkWindow.style.display = "none";
                     socialWindowIsOpen = false;
                 }
 
+                break;
+            case "leaveRoom":
+                window.location.href = "homePage.html"
                 break;
             default:
                 console.log("Interaction inconnue");
@@ -72,11 +75,11 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-logoInsta.addEventListener('click', function() {
+logoInsta.addEventListener('click', function () {
     window.open("https://www.instagram.com/thomas_bnsea?igsh=MTgzOWlpcHNpNG8xYQ%3D%3D&utm_source=qr", "_blank");
 })
 
-logoLinkedin.addEventListener('click', function() {
+logoLinkedin.addEventListener('click', function () {
     window.open("https://www.linkedin.com/in/thomas-bonansea-25a4b229a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", "_blank")
 })
 
@@ -114,7 +117,7 @@ function moveCharacter() {
         if (newY < marginTopWalls) newY = marginTopWalls;
         if (newY + characterHeight + marginBottomWalls > roomRect.height) newY = roomRect.height - characterHeight - marginBottomWalls;
 
-        const obstacles = document.querySelectorAll(".obstacleDeFouOMG");
+        const obstacles = document.querySelectorAll(".obstacle");
         let collisionDetected = false;
 
         obstacles.forEach((obstacle) => {
@@ -135,6 +138,12 @@ function moveCharacter() {
                     canPressE = true
                     eInteract.style.display = "block"
                     currentInteraction = "tv"
+                }
+
+                if (obstacle.id === "leaveRoom") {
+                    canPressE = true
+                    eInteract.style.display = "block"
+                    currentInteraction = "leaveRoom"
                 }
             }
         });
@@ -173,7 +182,7 @@ function isCollision(character, obstacle, posX, posY) {
         right: rect2.right - parentRect.left,
     };
 
-const bottomTolerance = 55;
+    const bottomTolerance = 55;
 
     return !(
         rect1.top + bottomTolerance > adjustedRect2.bottom ||

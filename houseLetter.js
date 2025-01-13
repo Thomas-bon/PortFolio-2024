@@ -34,7 +34,9 @@ document.addEventListener('keydown', (e) => {
                 maintenacePage.style.display = 'flex';
                 letterPage.style.display = 'flex';
                 closeMenu.style.display = 'block'
-
+                break;
+                case "leaveRoom":
+                window.location.href = "homePage.html"
                 break;
             default:
                 console.log("Interaction inconnue");
@@ -143,7 +145,7 @@ function moveCharacter() {
         if (newY + characterHeight + marginBottomWalls > roomRect.height) newY = roomRect.height - characterHeight - marginBottomWalls;
 
         // Détection des collisions
-        const obstacles = document.querySelectorAll(".obstacleDeFouOMG");
+        const obstacles = document.querySelectorAll(".obstacle");
         let collisionDetected = false;
 
         obstacles.forEach((obstacle) => {
@@ -159,9 +161,13 @@ function moveCharacter() {
                 if (obstacle.id === 'objet') {
                     eInteract.style.display = "block"
                     canPressE = true;
-
                     currentInteraction = "object";
+                }
 
+                if (obstacle.id === "leaveRoom") {
+                    canPressE = true
+                    eInteract.style.display = "block"
+                    currentInteraction = "leaveRoom"
                 }
 
             }

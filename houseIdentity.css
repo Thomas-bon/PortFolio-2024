@@ -35,14 +35,23 @@ body {
     position: relative;
 }
 
+#leaveRoom {
+    height: 15%;
+    width: 21%;
+    position: absolute;
+    bottom: 0;
+    left: 12vw;
+
+}
+
 #character {
     height: 120px;
     width: 70px;
     /* background-color: rgb(255, 0, 217); */
     position: absolute;
     z-index: 300;
-    bottom: 115px;
-    left: 290px;
+    bottom: 135px;
+    left: 330px;
 
 }
 
@@ -74,7 +83,7 @@ body {
 
 }
 
-.obstacleDeFouOMG {
+.obstacle {
 
     position: absolute;
     background-repeat: no-repeat;
@@ -329,7 +338,7 @@ body {
         animation: shake 1s ease-in-out infinite;
     }
 
-    .obstacleDeFouOMG {
+    .obstacle {
         width: 80%;
         height: auto;
     }

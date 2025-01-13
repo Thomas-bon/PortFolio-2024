@@ -40,6 +40,14 @@ body {
     position: relative;
 }
 
+#leaveRoom {
+    height: 15%;
+    width: 21%;
+    position: absolute;
+    bottom: 4vh;
+    right: 18.5vw;
+
+}
 
 #character {
     height: 120px;
@@ -47,8 +55,8 @@ body {
     /* background-color: rgb(255, 0, 217); */
     position: absolute;
     z-index: 11;
-    bottom: 160px;
-    left: 477px;
+    bottom: 200px;
+    left: 537px;
 
 }
 
@@ -80,7 +88,7 @@ body {
 
 }
 
-.obstacleDeFouOMG {
+.obstacle {
 
     /* background-color: black; */
     position: absolute;
@@ -376,7 +384,7 @@ body {
         left: 20%;
     }
 
-    .obstacleDeFouOMG {
+    .obstacle {
         width: 80%;
         height: auto;
     }

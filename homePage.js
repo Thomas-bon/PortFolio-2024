@@ -79,7 +79,7 @@ function moveCharacter() {
         if (newY < marginWindow) newY = marginWindow;
         if (newY + characterHeight > heightWindow - marginWindow) newY = heightWindow - characterHeight - marginWindow;
 
-        const obstacles = document.querySelectorAll(".obstacleDeFouOMG");
+        const obstacles = document.querySelectorAll(".obstacle");
         let collisionDetected = false;
 
         obstacles.forEach((obstacle) => {
