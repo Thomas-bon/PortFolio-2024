@@ -90,7 +90,8 @@ body {
     position: absolute;
     top: 10%;
     left: 5%;
-    font-family: 'Silkscreen', cursive;
+    font-family: "pixel";
+    color: black;
     font-size: 45px;
     height: 100px;
     width: 300px;

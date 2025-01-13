@@ -91,7 +91,8 @@ body {
     position: absolute;
     top: 10%;
     left: 5%;
-    font-family: 'Silkscreen', cursive;
+    font-family: "pixel";
+    color: black;
     font-size: 45px;
     height: 100px;
     width: 300px;
@@ -420,7 +421,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 50px;
         z-index: 14;
     }
 
@@ -437,7 +438,7 @@ body {
         font-family: pixel;
         font-size: 6vw;
         text-align: center;
-        margin-top: 7%;
+        /* margin-top: 7%; */
         height: 30%;
         width: 80%;
     }
@@ -458,7 +459,7 @@ body {
     #msgSuccess {
         position: absolute;
         text-align: center;
-        height: 80%;
+        height: 90%;
         width: 80%;
         font-family: pixel;
         font-size: 8vw;
