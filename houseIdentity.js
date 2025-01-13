@@ -1,8 +1,10 @@
 const buttonLeave = document.getElementById('leave')
 const character = document.getElementById('character');
 const paper = document.getElementById('paper');
-const tv = document.getElementById('tv')
-const socialNetworkWindow = document.getElementById('socialNetwork')
+const tv = document.getElementById('tv');
+const socialNetworkWindow = document.getElementById('socialNetwork');
+const logoInsta = document.querySelector("#instagram #logo");
+const logoLinkedin = document.querySelector("#linkedin #logo");
 
 let canPressE = false;
 let currentInteraction = null;
@@ -70,8 +72,13 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+logoInsta.addEventListener('click', function() {
+    window.open("https://www.instagram.com/thomas_bnsea?igsh=MTgzOWlpcHNpNG8xYQ%3D%3D&utm_source=qr", "_blank");
+})
 
-
+logoLinkedin.addEventListener('click', function() {
+    window.open("https://www.linkedin.com/in/thomas-bonansea-25a4b229a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", "_blank")
+})
 
 
 
