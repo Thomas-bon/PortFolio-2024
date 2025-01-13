@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+
 @font-face {
     font-family: "pixel";
     src: url(Typographie/PixelOperator-Bold.ttf);
@@ -91,7 +94,7 @@ body {
     position: absolute;
     top: 10%;
     left: 5%;
-    font-family: "pixel";
+    font-family: 'Silkscreen', cursive;
     color: black;
     font-size: 45px;
     height: 100px;
@@ -355,6 +358,13 @@ body {
         bottom: 25%;
         left: 10%;
         background-size: contain;
+    }
+
+    #objet {
+        height: 50px;
+        width: 50px;
+        bottom: 53%;
+        right: 48%;
     }
 
     #leave {

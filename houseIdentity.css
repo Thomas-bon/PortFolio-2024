@@ -89,6 +89,7 @@ body {
     top: 15%;
     left: 9%;
     font-family: 'Silkscreen', cursive;
+    color: black;
     font-size: 45px;
     height: 100px;
     width: 300px;
@@ -190,7 +191,7 @@ body {
     border: 15px solid #5E3643;
     align-items: center;
     position: absolute;
-    height: 90%;
+    height: 100%;
     width: 15%;
     right: 5%;
     gap: 60px;
