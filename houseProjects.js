@@ -4,13 +4,13 @@ const bookOpen = document.getElementById('bookOpen');
 
 /* ---------------------------------------------------  BOUTON RETOUR A LA PAGE HOME  ---------------------------------------------------*/
 
-buttonLeave.addEventListener('click', function() {
+buttonLeave.addEventListener('click', function () {
     window.location.href = "homePage.html";
 })
 
 document.addEventListener('keyup', (e) => {
-    if (e.key === "Escape"){
-    window.location.href = "homePage.html";
+    if (e.key === "Escape") {
+        window.location.href = "homePage.html";
 
     }
 })
@@ -70,7 +70,7 @@ function moveCharacter() {
 
         // Collisions room
         if (newX < marginCollisionsWalls) newX = marginCollisionsWalls;
-        if (newX + characterWidth + ajustRightWall  > roomRect.width) newX = roomRect.width - characterWidth - ajustRightWall;
+        if (newX + characterWidth + ajustRightWall > roomRect.width) newX = roomRect.width - characterWidth - ajustRightWall;
         if (newY < marginTopWalls) newY = marginTopWalls;
         if (newY + characterHeight + marginBottomWalls > roomRect.height) newY = roomRect.height - characterHeight - marginBottomWalls;
 
@@ -92,7 +92,7 @@ function moveCharacter() {
                     currentInteraction = "1vs1Fight"
                 }
 
-                
+
             }
         });
 
@@ -160,11 +160,37 @@ const projectOne = document.getElementById('1vs1Fight')
 
 const closeMenu = document.getElementById('closeMenu')
 
-projectOne.addEventListener('click', function() {
+projectOne.addEventListener('click', function () {
     bookOpen.style.display = "flex"
 
 })
 
-closeMenu.addEventListener('click', function() {
+closeMenu.addEventListener('click', function () {
     bookOpen.style.display = "none"
 })
+
+function playButtonInteraction() {
+    const buttonPlay = document.getElementById('button')
+    const textPlayButton = document.getElementById('textPlay')
+
+
+    buttonPlay.addEventListener('mousedown', function () {
+        buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrownPressed.png)';
+        textPlayButton.style.marginTop = '6%'
+
+        window.open("Projects/1vs1Fight/index.html", "_blank")
+    });
+
+    buttonPlay.addEventListener('mouseup', function () {
+        buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
+        textPlayButton.style.marginTop = '3%';
+
+    });
+
+    buttonPlay.addEventListener('mouseleave', function () {
+        buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
+        textPlayButton.style.marginTop = '3%'
+    });
+};
+
+playButtonInteraction();
