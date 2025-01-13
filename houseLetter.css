@@ -129,6 +129,17 @@ body {
     animation: scaling 0.8s ease-in-out infinite;
 }
 
+#pngLetter {
+    position: absolute;
+    top: 27%;
+    right: 20%;
+
+    background-image: url(pictures/Character/pngLetter.png);
+    background-size: cover;
+    height: 90px;
+    width: 90px;
+}
+
 /* ---------------------------------------------------  PAGE FORMULAIRE LETTRE  ---------------------------------------------------*/
 
 #letterBack {
