@@ -22,7 +22,7 @@ playButton.addEventListener('click', function () {
 
 function pngSpeaking() {
 
-    let delay = 100;
+    let delay = 80;
     let delay_start = 0;
     let contents;
     let letters;

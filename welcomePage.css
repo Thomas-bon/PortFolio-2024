@@ -125,10 +125,10 @@ a {
     background-image: url(pictures/props/bubbleWelcome.png);
     background-size: cover;
     background-position: center;
-    height: 220px;
-    width: 200px;
+    height: 320px;
+    width: 290px;
     top: -80%;
-    right: -55%;
+    right: -80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +140,7 @@ a {
     width: 80%;
     text-align: center;
     font-family: pixel;
-    font-size: 20px;
+    font-size: 29px;
 }
 
 
@@ -215,5 +215,28 @@ a {
 
         position: absolute;
         bottom: 0;
+    }
+
+    #bubbleMsg {
+        position: absolute;
+        background-image: url(pictures/props/bubbleWelcome.png);
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        width: 200px;
+        top: -80%;
+        right: -55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #comment {
+        margin-top: 20%;
+        height: 80%;
+        width: 80%;
+        text-align: center;
+        font-family: pixel;
+        font-size: 20px;
     }
 }
