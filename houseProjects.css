@@ -253,7 +253,7 @@ body {
 #textPlay{
     user-select: none;
     margin-top: 3%;
-    width: 80%;
+    width: 90%;
     height: 50%;
     text-align: center;
     font-family: "pixel";
@@ -403,7 +403,17 @@ body {
         background-size: contain;
         aspect-ratio: 16 / 9;
         width: 100%;
-        margin-top: 15%;
+        margin-top: 5%;
+    }
+
+    #textPlay{
+        user-select: none;
+        margin-top: 3%;
+        width: 80%;
+        height: 50%;
+        text-align: center;
+        font-family: "pixel";
+        font-size: 65%;
     }
 
     #description {

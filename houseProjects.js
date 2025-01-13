@@ -170,13 +170,14 @@ closeMenu.addEventListener('click', function () {
 })
 
 function playButtonInteraction() {
-    const buttonPlay = document.getElementById('button')
-    const textPlayButton = document.getElementById('textPlay')
+    const buttonPlay = document.getElementById('button');
+    const textPlayButton = document.getElementById('textPlay');
 
+    const width = window.innerWidth;
 
     buttonPlay.addEventListener('mousedown', function () {
         buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrownPressed.png)';
-        textPlayButton.style.marginTop = '6%'
+        textPlayButton.style.marginTop = '6%';
 
         window.open("Projects/1vs1Fight/index.html", "_blank")
     });
@@ -189,8 +190,15 @@ function playButtonInteraction() {
 
     buttonPlay.addEventListener('mouseleave', function () {
         buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
-        textPlayButton.style.marginTop = '3%'
+        textPlayButton.style.marginTop = '3%';
     });
+
+    if (width < 480) {
+        buttonPlay.style.display = "none";   
+    }else {
+        buttonPlay.style.display = "flex";
+    }
+
 };
 
 playButtonInteraction();
