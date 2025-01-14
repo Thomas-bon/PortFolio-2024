@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 @font-face {
     font-family: pixel;
     src: url(Typographie/PixelOperator-Bold.ttf);
@@ -15,6 +17,50 @@
     width: 100%;
     background-image: url(pictures/BackgroundHomePageeTel.png);
 }
+
+/* ---------------------------------------------------  MENTIONS ---------------------------------------------------*/
+
+
+#byWho {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 14%;
+    gap: 0;
+    width: 40%;
+    /* background-color: red; */
+    font-size: 60px;
+    font-family: pixel;
+    text-align: right;
+    margin-right: 2%;
+    margin-bottom: 2%;
+
+    -webkit-text-stroke: 16px rgb(0, 0, 0);
+    paint-order: stroke fill;
+    animation: littleMove 0.8s ease-in-out infinite;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#designer {
+    -webkit-text-stroke: 16px rgb(0, 0, 0);
+    color: rgb(202, 174, 237);
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+}
+
+#designer:hover {
+    -webkit-text-stroke: 16px rgb(202, 174, 237);
+    color: black;
+}
+
+#characters {
+    height: 45%;
+    width: 100%;
+    color: rgb(243, 194, 147);
+
+}
+
 
 
 /* ---------------------------------------------------  TITRE ---------------------------------------------------*/
@@ -105,6 +151,22 @@ a {
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes littleMove {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+
+    }
+
+    100% {
+        transform: scale(1);
+
     }
 }
 
@@ -231,7 +293,7 @@ a {
         justify-content: center;
         align-items: center;
     }
-    
+
     #comment {
         margin-top: 20%;
         height: 80%;
@@ -239,5 +301,26 @@ a {
         text-align: center;
         font-family: pixel;
         font-size: 20px;
+    }
+
+    #byWho {
+        font-size: 22px;
+        height: 12%;
+        width: 60%;
+    -webkit-text-stroke: 10px rgb(0, 0, 0);
+
+    }
+
+    #designer {
+        font-size: 27px ;
+    -webkit-text-stroke: 10px rgb(0, 0, 0);
+    }
+
+
+    #characters {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: space-between;
     }
 }
