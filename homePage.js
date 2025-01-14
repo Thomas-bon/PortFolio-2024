@@ -204,16 +204,3 @@ for (let i = 0; i < allOfHouse.length; i++) {
         allSignOfHouse[i].style.animation = "";
     });
 }
-
-// RESPONSIVE PETITS ECRANS
-const background = document.getElementById('background')
-
-let width = window.innerWidth 
-
-if (width < 1480 ) {
-    background.style.backgroundImage = 'url(pictures/BackgroundHomePageeSmallWindow.png)';
-    background.style.backgroundSize = 'cover';
-}else{
-    background.style.backgroundImage = 'url(pictures/BackgroundHomePagee.png)';
-    background.style.backgroundSize = 'cover';
-}
