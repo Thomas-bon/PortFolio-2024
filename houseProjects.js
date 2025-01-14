@@ -49,12 +49,19 @@ document.addEventListener('keydown', (e) => {
 
 function moveCharacter() {
     document.addEventListener('keydown', (e) => {
+        let width = window.innerWidth;
+        let marginBottomWalls
+
         const steps = 18;
         const marginCollisionsWalls = 22;
         const marginTopWalls = 47;
-        const marginBottomWalls = 110;
         const ajustRightWall = 20;
 
+        if (width < 1480) {
+            marginBottomWalls = 175;
+        } else{
+            marginBottomWalls = 105;
+        }
 
         let currentX = parseInt(window.getComputedStyle(character).left) || 0;
         let currentY = parseInt(window.getComputedStyle(character).top) || 0;

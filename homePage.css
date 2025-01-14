@@ -27,7 +27,9 @@
     position: absolute;
     z-index: 300;
     bottom: 100px;
-    left: 1000px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 
 }
 
@@ -73,13 +75,15 @@
 
 #houseProjects {
     cursor: pointer;
-    width: 430px;
-    height: 400px;
-    top: 100px;
+    width: 21%;
+    height: 40%;
+    top: 16%;
     right: 80px;
     background-image: url('pictures/houseProjects.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+    
     z-index: 100;
 
     display: flex;
@@ -88,10 +92,8 @@
 
 #houseIdentity {
     cursor: pointer;
-    width: 390px;
-    height: 390px;
-    top: 0px;
-    left: 850px;
+    width: 20%;
+    height: 40%;
     background-image: url('pictures/houseIdentity.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -99,14 +101,18 @@
 
     display: flex;
     justify-content: center;
+    
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #houseLetter {
     cursor: pointer;
-    width: 390px;
-    height: 450px;
-    bottom: 200px;
-    left: 100px;
+    width: 18%;
+    height: 45%;
+    
     background-image: url('pictures/houseLetter.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -114,9 +120,14 @@
 
     display: flex;
     justify-content: center;
+
+    position: absolute;
+    top: 40%;
+    left: 8%;
 }
 
 .sign {
+    user-select: none;
     position: absolute;
     background-image: url(pictures/signHome.png);
     background-size: contain;
@@ -246,11 +257,10 @@
     justify-content: flex-end;
     position: absolute;
     /* background-color: black; */
-    height: 210px;
-    width: 350px;
+    height: 20%;
+    width: 25%;
     bottom: 30px;
-    right: 90px;
-    gap: 0px;
+    right: 4%;
     z-index: 400;
 }
 
@@ -259,6 +269,7 @@
     background-position: center top;
     height: 50%;
     background-repeat: no-repeat;
+    margin-bottom: 4%;
 
 }
 
@@ -354,15 +365,19 @@
         position: absolute;
         width: 55%;
         height: 30%;
-        top: 35%;
-        left: 25%;
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
 
     }
 
     #houseIdentity {
         position: absolute;
-        top: 40px;
-        left: 25%;
+        /* top: 40px; */
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
         width: 55%;
         height: 30%;
 
@@ -370,8 +385,10 @@
 
     #houseLetter {
         position: absolute;
-        bottom: 5%;
-        left: 25%;
+        left: 50%;
+        right: 50%;
+        top: 77%;
+        transform: translate(-50%, -50%);
         width: 55%;
         height: 30%;
 

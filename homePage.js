@@ -168,13 +168,14 @@ function isCollision(character, obstacle, posX, posY, margin) {
         right: rect2.right
     };
 
-    const bottomTolerance = 120;
+    const bottomTolerance = 50;
+    const ajustSpaceResponsive = 70
 
     return !(
         rect1.top + bottomTolerance > obstacleSize.bottom ||
-        rect1.bottom - 5 < obstacleSize.top ||
-        rect1.left - 5 > obstacleSize.right ||
-        rect1.right - 5 < obstacleSize.left
+        rect1.bottom - ajustSpaceResponsive < obstacleSize.top ||
+        rect1.left > obstacleSize.right ||
+        rect1.right - ajustSpaceResponsive < obstacleSize.left
     );
 }
 
@@ -204,4 +205,15 @@ for (let i = 0; i < allOfHouse.length; i++) {
     });
 }
 
- 
+// RESPONSIVE PETITS ECRANS
+const background = document.getElementById('background')
+
+let width = window.innerWidth 
+
+if (width < 1480 ) {
+    background.style.backgroundImage = 'url(pictures/BackgroundHomePageeSmallWindow.png)';
+    background.style.backgroundSize = 'cover';
+}else{
+    background.style.backgroundImage = 'url(pictures/BackgroundHomePagee.png)';
+    background.style.backgroundSize = 'cover';
+}

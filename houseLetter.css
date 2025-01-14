@@ -44,7 +44,7 @@ body {
     height: 15%;
     width: 21%;
     position: absolute;
-    bottom: 4vh;
+    bottom: 8%;
     right: 18.5vw;
 
 }
@@ -55,8 +55,9 @@ body {
     /* background-color: rgb(255, 0, 217); */
     position: absolute;
     z-index: 11;
-    bottom: 200px;
-    left: 537px;
+    top: 74%;
+    left: 53%;
+    transform: translate(-53%, -47%);
 
 }
 
@@ -122,10 +123,10 @@ body {
 
 #table {
     background-image: url(pictures/props/tableLetter.png);
-
-    height: 140px;
-    width: 265px;
-    bottom: 20%;
+background-size: contain;
+    height: 15.5%;
+    width: 27%;
+    top: 60%;
     left: 10%;
 }
 
@@ -137,7 +138,7 @@ body {
     width: 70px;
     background-image: url(pictures/props/letter.png);
     background-size: cover;
-    bottom: 53%;
+    top: 40%;
     right: 44%;
     animation: scaling 0.8s ease-in-out infinite;
 }

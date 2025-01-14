@@ -35,7 +35,7 @@ document.addEventListener('keydown', (e) => {
                 letterPage.style.display = 'flex';
                 closeMenu.style.display = 'block'
                 break;
-                case "leaveRoom":
+            case "leaveRoom":
                 window.location.href = "homePage.html"
                 break;
             default:
@@ -73,7 +73,7 @@ function letterInteraction() {
                     clipboardSuccess.style.display = 'none'
                     clipboardSuccess.style.animation = "pop-up 0.6s ease-in-out"
 
-                    
+
                     closeMenu.style.display = 'block'
 
                 }, 1600)
@@ -88,10 +88,10 @@ function letterInteraction() {
         buttonCopyAdresse.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
         msgCopyAdresse.style.marginTop = '10px';
 
-        if (window.innerWidth <= 768) { 
-            closeMenu.style.display = 'none'; 
+        if (window.innerWidth <= 768) {
+            closeMenu.style.display = 'none';
         } else {
-            closeMenu.style.display = 'block'; 
+            closeMenu.style.display = 'block';
         }
     });
 
@@ -117,11 +117,18 @@ letterInteraction();
 
 function moveCharacter() {
     document.addEventListener('keydown', (e) => {
-        const steps = 18;
-        const marginCollisionsWalls = 22;
-        const marginTopWalls = 360;
-        const marginBottomWalls = 155;
+        let width = window.innerWidth;
+        let marginBottomWalls
 
+        const steps = 18;
+        const marginCollisionsWalls = 42;
+        const marginTopWalls = 360;
+
+        if (width < 1480) {
+            marginBottomWalls = 175;
+        } else{
+            marginBottomWalls = 105;
+        }
 
         let currentX = parseInt(window.getComputedStyle(character).left) || 0;
         let currentY = parseInt(window.getComputedStyle(character).top) || 0;
@@ -140,7 +147,7 @@ function moveCharacter() {
 
         // Collisions room
         if (newX < marginCollisionsWalls) newX = marginCollisionsWalls;
-        if (newX + characterWidth + marginCollisionsWalls > roomRect.width) newX = roomRect.width - characterWidth - marginCollisionsWalls;
+        if (newX + characterWidth > roomRect.width) newX = roomRect.width - characterWidth;
         if (newY < marginTopWalls) newY = marginTopWalls;
         if (newY + characterHeight + marginBottomWalls > roomRect.height) newY = roomRect.height - characterHeight - marginBottomWalls;
 
@@ -206,13 +213,15 @@ function isCollision(character, obstacle, posX, posY) {
         right: rect2.right - parentRect.left,
     };
 
-    const bottomTolerance = 25;
+    const bottomTolerance = -40;
+    const ajustSpaceResponsive = 70
+
 
     return !(
         rect1.top + bottomTolerance > adjustedRect2.bottom ||
-        rect1.bottom < adjustedRect2.top ||
+        rect1.bottom - ajustSpaceResponsive < adjustedRect2.top ||
         rect1.left > adjustedRect2.right ||
-        rect1.right < adjustedRect2.left
+        rect1.right - ajustSpaceResponsive < adjustedRect2.left
     );
 }
 

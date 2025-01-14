@@ -90,12 +90,20 @@ logoLinkedin.addEventListener('click', function () {
 
 function moveCharacter() {
     document.addEventListener('keydown', (e) => {
+        let width = window.innerWidth;
+        let marginBottomWalls;
+        let marginTopWalls;
+
+
         const steps = 18;
-        const marginCollisionsWalls = 32;
-        const marginTopWalls = 35;
-        const marginBottomWalls = 112;
 
-
+        if (width < 1480) {
+            marginBottomWalls = 175;
+            marginCollisionsWalls = 32;
+        } else {
+            marginBottomWalls = 105;
+            marginCollisionsWalls = 80;
+        }
 
         let currentX = parseInt(window.getComputedStyle(character).left) || 0;
         let currentY = parseInt(window.getComputedStyle(character).top) || 0;
@@ -183,6 +191,7 @@ function isCollision(character, obstacle, posX, posY) {
     };
 
     const bottomTolerance = 55;
+    
 
     return !(
         rect1.top + bottomTolerance > adjustedRect2.bottom ||
