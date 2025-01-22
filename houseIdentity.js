@@ -98,9 +98,11 @@ function moveCharacter() {
         const steps = 18;
 
         if (width < 1480) {
+            marginTopWalls = 120;
             marginBottomWalls = 175;
-            marginCollisionsWalls = 32;
+            marginCollisionsWalls = 122;
         } else {
+            marginTopWalls = 90;
             marginBottomWalls = 105;
             marginCollisionsWalls = 80;
         }

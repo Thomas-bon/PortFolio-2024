@@ -122,7 +122,7 @@ function moveCharacter() {
 
         const steps = 18;
         const marginCollisionsWalls = 42;
-        const marginTopWalls = 360;
+        const marginTopWalls = 470;
 
         if (width < 1480) {
             marginBottomWalls = 175;
