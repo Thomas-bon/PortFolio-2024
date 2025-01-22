@@ -53,14 +53,14 @@ function moveCharacter() {
         let marginBottomWalls
 
         const steps = 18;
-        const marginCollisionsWalls = 22;
+        const marginCollisionsWalls = 68;
         const marginTopWalls = 120;
-        const ajustRightWall = 20;
+        const ajustRightWall = 70;
 
         if (width < 1480) {
             marginBottomWalls = 200;
         } else{
-            marginBottomWalls = 160;
+            marginBottomWalls = 130;
         }
 
         let currentX = parseInt(window.getComputedStyle(character).left) || 0;

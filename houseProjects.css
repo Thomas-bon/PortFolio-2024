@@ -32,7 +32,7 @@ body {
 
 #room {
     height: 90%;
-    width: 44%;
+    width: 55%;
     background-image: url('pictures/backgroundProjects.png');
     background-size: contain;
     background-position: center;
@@ -41,7 +41,7 @@ body {
 }
 
 #leaveRoom {
-    height: 18%;
+    height: 15%;
     width: 21%;
     position: absolute;
     bottom: 3%;
