@@ -132,6 +132,7 @@
     background-image: url(pictures/signHome.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     margin-top: 25%;
     width: 120%;
     height: 30%;

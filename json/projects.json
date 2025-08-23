@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Signe et moi",
+    "description": "Uniquement en format mobile, c'est une application pour apprendre le langage des signes.",
+    "gif": "pictures/projects/gif1vs1.gif",
+    "link": "signeetmoi.vercel.app"
+  },
+  {
+    "name": "Projet OS",
+    "description": "Un site web qui a l'apparence d'un autre pc, avec des fichiers, un bureau, des applications.",
+    "gif": "pictures/projects/projet2.gif",
+    "link": "https://github.com/monrepo/projet2"
+  }
+]

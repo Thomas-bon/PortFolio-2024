@@ -1,6 +1,6 @@
 const buttonLeave = document.getElementById('leave');
 const character = document.getElementById('character');
-const bookOpen = document.getElementById('bookOpen');
+// const bookOpen = document.getElementById('bookOpen');
 
 /* ---------------------------------------------------  BOUTON RETOUR A LA PAGE HOME  ---------------------------------------------------*/
 
@@ -15,28 +15,28 @@ document.addEventListener('keyup', (e) => {
     }
 })
 
-/* ---------------------------------------------------  LES INTERACTIONS  ---------------------------------------------------*/
+// /* ---------------------------------------------------  LES INTERACTIONS  ---------------------------------------------------*/
 
 
 
-document.addEventListener('keydown', (e) => {
-    if ((e.key === 'e' || e.key === 'E') && canPressE) {
+// document.addEventListener('keydown', (e) => {
+//     if ((e.key === 'e' || e.key === 'E') && canPressE) {
 
-        switch (currentInteraction) {
-            case "1vs1Fight":
-                bookOpen.style.display = "block"
-                break;
-            case "leaveRoom":
-                window.location.href = "homePage.html"
-                break;
-            default:
-                console.log("Interaction inconnue");
-        }
+//         switch (currentInteraction) {
+//             case "1vs1Fight":
+//                 bookOpen.style.display = "block"
+//                 break;
+//             case "leaveRoom":
+//                 window.location.href = "homePage.html"
+//                 break;
+//             default:
+//                 console.log("Interaction inconnue");
+//         }
 
 
 
-    }
-});
+//     }
+// });
 
 
 
@@ -59,7 +59,7 @@ function moveCharacter() {
 
         if (width < 1480) {
             marginBottomWalls = 200;
-        } else{
+        } else {
             marginBottomWalls = 130;
         }
 
@@ -96,10 +96,9 @@ function moveCharacter() {
                 const eInteract = document.getElementById('eInteract')
 
 
-                if (obstacle.id === "1vs1Fight") {
+                if (obstacle.className.contains("book")) {
                     canPressE = true
                     eInteract.style.display = "block"
-                    currentInteraction = "1vs1Fight"
                 }
 
                 if (obstacle.id === "leaveRoom") {
@@ -158,64 +157,79 @@ moveCharacter();
 
 /* ---------------------------------------------------  BOOKOPEN INNERHTML ET INTERACTIONS  ---------------------------------------------------*/
 
-// INNERHTML
 
-const titleProject = document.getElementById('title')
-const gifProject = document.getElementById('video')
-const descProject = document.getElementById('description')
+const titleProject = document.getElementById('title');
+const gifProject = document.getElementById('video');
+const descProject = document.getElementById('description');
+const closeMenu = document.getElementById('closeMenu');
+const bookOpen = document.getElementById('bookOpen');
+const buttonPlay = document.getElementById('button');
+const textPlayButton = document.getElementById('textPlay');
 
-const title = "1vs1 Fight";
-const video = "url(pictures/projects/gif1vs1.gif)"
-const description = "1 vs 1 fighter est un jeu de frappe où deux joueurs se confrontent, le premier a avoir appuyé 100fois sur leur touche dédié, qu'un seul mot d'ordre... S'amuser ! ";
+let projects = [];
 
-titleProject.innerHTML = title
-gifProject.style.backgroundImage = video
-descProject.innerHTML = description
+// Charger les projets
+fetch("json/projects.json")
+    .then(res => res.json())
+    .then(data => {
+        projects = data;
+        createBooks(projects);
+    });
 
-// INTERACTION
-const projectOne = document.getElementById('1vs1Fight')
+// Crée un livre par projet
+function createBooks(projects) {
+    const tables = document.querySelectorAll("#tables > #tableAndChair");
 
-const closeMenu = document.getElementById('closeMenu')
+    projects.forEach((proj, i) => {
+        if (!tables[i]) return; 
+        const book = document.createElement("div");
+        book.classList.add("obstacle", "book");
+        book.dataset.id = i;
+        tables[i].appendChild(book);
 
-projectOne.addEventListener('click', function () {
-    bookOpen.style.display = "flex"
+        book.addEventListener("click", () => openBook(i));
+    });
+}
 
-})
+function openBook(index) {
+    const project = projects[index];
+    if (!project) return;
+    bookOpen.style.display = "flex";
+    console.log("Livre cliqué :", project.name)
+    titleProject.innerHTML = project.name;
+    gifProject.style.backgroundImage = `url(${project.gif})`;
+    descProject.innerHTML = project.description;
 
-closeMenu.addEventListener('click', function () {
-    bookOpen.style.display = "none"
-})
+    // bouton play
+    buttonPlay.onclick = () => {
+        window.open(project.link, "_blank");
+    };
 
+    
+}
+
+closeMenu.addEventListener("click", () => {
+    bookOpen.style.display = "none";
+});
+
+// Gestion responsive du bouton
 function playButtonInteraction() {
-    const buttonPlay = document.getElementById('button');
-    const textPlayButton = document.getElementById('textPlay');
-
     const width = window.innerWidth;
+    buttonPlay.style.display = width < 480 ? "none" : "flex";
 
-    buttonPlay.addEventListener('mousedown', function () {
+    buttonPlay.addEventListener("mousedown", () => {
         buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrownPressed.png)';
         textPlayButton.style.marginTop = '6%';
-
-        window.open("Projects/1vs1Fight/index.html", "_blank")
     });
 
-    buttonPlay.addEventListener('mouseup', function () {
-        buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
-        textPlayButton.style.marginTop = '3%';
-
-    });
-
-    buttonPlay.addEventListener('mouseleave', function () {
+    buttonPlay.addEventListener("mouseup", () => {
         buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
         textPlayButton.style.marginTop = '3%';
     });
 
-    if (width < 480) {
-        buttonPlay.style.display = "none";   
-    }else {
-        buttonPlay.style.display = "flex";
-    }
-
-};
-
+    buttonPlay.addEventListener("mouseleave", () => {
+        buttonPlay.style.backgroundImage = 'url(pictures/props/buttonBrown.png)';
+        textPlayButton.style.marginTop = '3%';
+    });
+}
 playButtonInteraction();

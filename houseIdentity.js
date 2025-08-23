@@ -26,7 +26,7 @@ document.addEventListener('keyup', (e) => {
 // LES INTERACTIONS
 
 function openPdf() {
-    const pdfUrl = 'pdf/CV\ Thomas\ BONANSEA.pdf';
+    const pdfUrl = 'pdf/CV_Thomas_Bonansea_2025.pdf';
     window.open(pdfUrl, '_blank');
 };
 
