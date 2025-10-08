@@ -2,19 +2,19 @@
   {
     "name": "Signe et moi",
     "description": "Uniquement en format mobile, c'est une application pour apprendre le langage des signes.",
-    "gif": "pictures/projects/gif1vs1.gif",
+    "gif": "https://drive.google.com/uc?export=view&id=1EV3XQAlt8uqLk68KayxMdQSOUkHltN8p",
     "link": "signeetmoi.vercel.app"
   },
   {
     "name": "Projet OS",
     "description": "Un site web qui a l'apparence d'un autre pc, avec des fichiers, un bureau, des applications.",
-    "gif": "pictures/projects/osproject.gif",
+    "gif": "https://i.imgur.com/zKbxnr6.gif",
     "link": "https://github.com/monrepo/projet2"
   },
   {
     "name": "Memoria",
     "description": "Un site de e-commerce destiné à une clientèle de sportif, le but est de personnaliser son tshirt pour faire du running",
-    "gif": "pictures/projects/memoria.gif",
+    "gif": "https://imgur.com/a/YgkbfDd",
     "link": "https://github.com/Thomas-bon/Memoria"
   }
 ]
