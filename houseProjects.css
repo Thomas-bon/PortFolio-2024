@@ -237,6 +237,7 @@ body {
     aspect-ratio: 16 / 9;
     width: 100%;
     margin-top: 8%;
+    background-position: center;
 }
 
 #buttontoplay {
