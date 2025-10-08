@@ -8,7 +8,13 @@
   {
     "name": "Projet OS",
     "description": "Un site web qui a l'apparence d'un autre pc, avec des fichiers, un bureau, des applications.",
-    "gif": "pictures/projects/projet2.gif",
+    "gif": "pictures/projects/osproject.gif",
     "link": "https://github.com/monrepo/projet2"
+  },
+  {
+    "name": "Memoria",
+    "description": "Un site de e-commerce destiné à une clientèle de sportif, le but est de personnaliser son tshirt pour faire du running",
+    "gif": "pictures/projects/memoria.gif",
+    "link": "https://github.com/Thomas-bon/Memoria"
   }
 ]
